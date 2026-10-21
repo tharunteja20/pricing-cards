@@ -32,6 +32,7 @@ header p{margin:0;color:var(--muted)}
 .card h2{margin:0 0 4px;font-size:1.4rem}
 .card .desc{margin:0 0 20px;color:var(--muted)}
 .price{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+.cur{font-size:1.6rem;font-weight:700;align-self:flex-start;margin-top:6px}
 .amount{font-size:3rem;font-weight:800;line-height:1}
 .per{color:var(--muted)}
 .billed{color:var(--muted);font-size:.9rem;min-height:1.4em;margin:0 0 20px}
@@ -61,8 +62,8 @@ header p{margin:0;color:var(--muted)}
     <article class="card">
       <h2>Starter</h2>
       <p class="desc">For individuals just getting going.</p>
-      <div class="price"><span class="amount" data-monthly="9" data-yearly="7">9</span><span class="per">/ month</span></div>
-      <p class="billed" data-monthly="Billed monthly" data-yearly="$84 billed yearly">Billed monthly</p>
+      <div class="price"><span class="cur">₹</span><span class="amount" data-monthly="499" data-yearly="399">499</span><span class="per">/ month</span></div>
+      <p class="billed" data-monthly="Billed monthly" data-yearly="₹4,788 billed yearly">Billed monthly</p>
       <ul><li>1 project</li><li>5 GB storage</li><li>Email support</li></ul>
       <a class="cta" href="#">Get started</a>
     </article>
@@ -71,8 +72,8 @@ header p{margin:0;color:var(--muted)}
       <span class="ribbon popular">Popular</span>
       <h2>Pro</h2>
       <p class="desc">For growing teams that need more.</p>
-      <div class="price"><span class="amount" data-monthly="29" data-yearly="23">29</span><span class="per">/ month</span></div>
-      <p class="billed" data-monthly="Billed monthly" data-yearly="$276 billed yearly">Billed monthly</p>
+      <div class="price"><span class="cur">₹</span><span class="amount" data-monthly="1,499" data-yearly="1,199">1,499</span><span class="per">/ month</span></div>
+      <p class="billed" data-monthly="Billed monthly" data-yearly="₹14,388 billed yearly">Billed monthly</p>
       <ul><li>10 projects</li><li>50 GB storage</li><li>Priority support</li><li>Team collaboration</li></ul>
       <a class="cta" href="#">Choose Pro</a>
     </article>
@@ -81,8 +82,8 @@ header p{margin:0;color:var(--muted)}
       <span class="ribbon value">Best Value</span>
       <h2>Business</h2>
       <p class="desc">For companies that run at scale.</p>
-      <div class="price"><span class="amount" data-monthly="79" data-yearly="63">79</span><span class="per">/ month</span></div>
-      <p class="billed" data-monthly="Billed monthly" data-yearly="$756 billed yearly">Billed monthly</p>
+      <div class="price"><span class="cur">₹</span><span class="amount" data-monthly="3,999" data-yearly="3,199">3,999</span><span class="per">/ month</span></div>
+      <p class="billed" data-monthly="Billed monthly" data-yearly="₹38,388 billed yearly">Billed monthly</p>
       <ul><li>Unlimited projects</li><li>500 GB storage</li><li>24/7 phone support</li><li>Advanced analytics</li></ul>
       <a class="cta" href="#">Contact sales</a>
     </article>
@@ -110,4 +111,4 @@ toggle.addEventListener("click", function(){
 });
 </script>
 </body>
-</html> 
+</html>
