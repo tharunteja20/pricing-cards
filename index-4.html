@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing Cards | Tharun Teja</title>
+<style>
+:root{--bg:#eef2f6;--surface:#fff;--ink:#101820;--muted:#4b5a6a;--accent:#0f766e;--accent-ink:#fff;--warm:#f2a900;--line:#d5dde6;--shadow:0 14px 30px rgba(16,24,32,.18)}
+@media (prefers-color-scheme: dark){:root{--bg:#0e141b;--surface:#16202b;--ink:#eaf0f6;--muted:#9db0c2;--accent:#2dd4bf;--accent-ink:#06201d;--line:#27364a;--shadow:0 14px 30px rgba(0,0,0,.5)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;padding:40px 16px}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto}
+header{text-align:center;margin-bottom:28px}
+h1{font-size:clamp(1.8rem,7vw,2.8rem);margin:0 0 8px;letter-spacing:-.02em}
+header p{margin:0;color:var(--muted)}
+.switch{display:flex;justify-content:center;align-items:center;gap:12px;margin:24px 0 36px;font-weight:600}
+.switch .lbl{color:var(--muted);transition:color .3s}
+.switch .lbl.on{color:var(--ink)}
+.track{position:relative;width:56px;height:30px;border-radius:99px;border:2px solid var(--accent);background:var(--surface);cursor:pointer;padding:0;transition:background .3s}
+.track::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--accent);transition:transform .3s}
+.track[aria-checked="true"]{background:var(--accent)}
+.track[aria-checked="true"]::after{transform:translateX(26px);background:var(--accent-ink)}
+.save{font-size:.8rem;background:var(--warm);color:#101820;padding:2px 8px;border-radius:99px;margin-left:4px}
+.cards{display:grid;gap:24px;align-items:stretch}
+.card{position:relative;overflow:hidden;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.card:hover,.card:focus-within{transform:translateY(-10px) scale(1.02);box-shadow:var(--shadow);border-color:var(--accent)}
+.card.featured{border-color:var(--accent)}
+.ribbon{position:absolute;top:22px;right:-44px;width:160px;text-align:center;transform:rotate(45deg);padding:5px 0;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ribbon.popular{background:var(--warm);color:#101820}
+.ribbon.value{background:var(--accent);color:var(--accent-ink)}
+.card h2{margin:0 0 4px;font-size:1.4rem}
+.card .desc{margin:0 0 20px;color:var(--muted)}
+.price{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+.amount{font-size:3rem;font-weight:800;line-height:1}
+.per{color:var(--muted)}
+.billed{color:var(--muted);font-size:.9rem;min-height:1.4em;margin:0 0 20px}
+.card ul{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:10px;flex:1}
+.card li::before{content:"\2713";color:var(--accent);font-weight:800;margin-right:10px}
+.cta{display:block;text-align:center;text-decoration:none;font-weight:700;padding:12px;border-radius:10px;border:2px solid var(--accent);color:var(--accent);transition:background .3s,color .3s,transform .2s}
+.cta:hover{background:var(--accent);color:var(--accent-ink);transform:translateY(-2px)}
+.featured .cta{background:var(--accent);color:var(--accent-ink)}
+@media (min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.card:hover,.card:focus-within{transform:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>Simple, transparent pricing</h1>
+    <p>Pick a plan that grows with you. Switch to yearly and save 20%.</p>
+  </header>
+
+  <div class="switch">
+    <span class="lbl on" id="lblMonthly">Monthly</span>
+    <button class="track" id="billingToggle" type="button" role="switch" aria-checked="false" aria-label="Bill yearly"></button>
+    <span class="lbl" id="lblYearly">Yearly <span class="save">Save 20%</span></span>
+  </div>
+
+  <section class="cards" aria-label="Pricing plans">
+    <article class="card">
+      <h2>Starter</h2>
+      <p class="desc">For individuals just getting going.</p>
+      <div class="price"><span class="amount" data-monthly="9" data-yearly="7">9</span><span class="per">/ month</span></div>
+      <p class="billed" data-monthly="Billed monthly" data-yearly="$84 billed yearly">Billed monthly</p>
+      <ul><li>1 project</li><li>5 GB storage</li><li>Email support</li></ul>
+      <a class="cta" href="#">Get started</a>
+    </article>
+
+    <article class="card featured">
+      <span class="ribbon popular">Popular</span>
+      <h2>Pro</h2>
+      <p class="desc">For growing teams that need more.</p>
+      <div class="price"><span class="amount" data-monthly="29" data-yearly="23">29</span><span class="per">/ month</span></div>
+      <p class="billed" data-monthly="Billed monthly" data-yearly="$276 billed yearly">Billed monthly</p>
+      <ul><li>10 projects</li><li>50 GB storage</li><li>Priority support</li><li>Team collaboration</li></ul>
+      <a class="cta" href="#">Choose Pro</a>
+    </article>
+
+    <article class="card">
+      <span class="ribbon value">Best Value</span>
+      <h2>Business</h2>
+      <p class="desc">For companies that run at scale.</p>
+      <div class="price"><span class="amount" data-monthly="79" data-yearly="63">79</span><span class="per">/ month</span></div>
+      <p class="billed" data-monthly="Billed monthly" data-yearly="$756 billed yearly">Billed monthly</p>
+      <ul><li>Unlimited projects</li><li>500 GB storage</li><li>24/7 phone support</li><li>Advanced analytics</li></ul>
+      <a class="cta" href="#">Contact sales</a>
+    </article>
+  </section>
+</main>
+
+<script>
+const toggle = document.getElementById("billingToggle");
+const lblM = document.getElementById("lblMonthly");
+const lblY = document.getElementById("lblYearly");
+const amounts = document.querySelectorAll(".amount");
+const billed = document.querySelectorAll(".billed");
+
+function setBilling(yearly){
+  const key = yearly ? "yearly" : "monthly";
+  toggle.setAttribute("aria-checked", String(yearly));
+  lblM.classList.toggle("on", !yearly);
+  lblY.classList.toggle("on", yearly);
+  amounts.forEach(function(el){ el.textContent = el.dataset[key]; });
+  billed.forEach(function(el){ el.textContent = el.dataset[key]; });
+}
+
+toggle.addEventListener("click", function(){
+  setBilling(toggle.getAttribute("aria-checked") !== "true");
+});
+</script>
+</body>
+</html>
